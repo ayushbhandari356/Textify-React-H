@@ -1,0 +1,28 @@
+  This is a text converter website. Feel free to use it. Developed by Ayush Bhandari
+
+
+
+
+
+  return (
+    <>
+    <Router>
+      <Navbar title={"Converter"} about="About" mode={mode} toggleMode={toggleMode}  />
+      <Alerts alert={alert} />
+     
+      
+        <div className="container">
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/">
+             <TextForm heading="Enter Your Text Here" mode={mode} showAlert={showAlert}/>
+          </Route>
+        </Switch>
+          
+        </div>
+     </Router>
+     
+    </>
+  );
