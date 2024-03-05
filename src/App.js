@@ -4,6 +4,7 @@ import About  from "./Components/About";
 import Navbar from "./Components/Navbar";
 import TextForm from "./Components/TextForm";
 import Alerts from "./Components/Alerts";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // importing react router dom
 
@@ -54,19 +55,35 @@ function App() {
     }
   }
   return (
-    <div className="" >
-      <Navbar title={"Converter"} about="About" mode={mode} toggleMode={toggleMode}  />
-      <Alerts alert={alert} />
-      {/* <MyComponent {...myProps} /> */}
+   
+    // <div className="" >
+    //   <Navbar title={"Converter"} about={"About"} mode={mode} toggleMode={toggleMode}  />
+    //   <Alerts alert={alert} />
+    //   {/* <MyComponent {...myProps} /> */}
 
       
-        <div className="container">
-          <TextForm heading="Enter Your Text Here" mode={mode} showAlert={showAlert}/>
-        </div>
+    //     <div className="container">
+    //       <TextForm heading="Enter Your Text Here" mode={mode} showAlert={showAlert}/>
+    //     </div>
 
-        <About />
+    //     <About />
      
-    </div>
+    // </div>
+
+
+
+    <Router>
+      <Navbar title={"Textify"} about="About" mode={mode} toggleMode={toggleMode} />
+      <Alerts alert={alert} />
+      <div className="container">
+        <Routes>
+          <Route path="/about" element={<About />} />
+          <Route path="/" element={<TextForm heading="Enter Your Text Here" mode={mode} showAlert={showAlert} />} />
+        </Routes>
+      </div>
+    </Router>
+   
+
   );
 }
 

@@ -4,8 +4,8 @@ function About() {
     const [buttonText,setButtonText]=useState("Enable Light Mode")
     const [myStyle,setMyStyle]=useState({
         
-        color:"white",
-        backgroundColor:"#101010",
+        color:"black",
+        backgroundColor:"white",
     })
 
     const toggleDarkLight=()=>{
