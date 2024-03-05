@@ -33,12 +33,15 @@ function TextForm(props) {
     setText(event.target.value);
   };
   function removeExtraSpaces() {
-    
-    var textarea = document.getElementById("exampleFormControlTextarea1");
-    var newText = textarea.value.replace(/\s+/g, ' ').trim();
-    textarea.value = newText;
-    props.showAlert("Extra spaces cleared","success")
+    let newText = text.replace(/\s+/g, ' ').trim();
+    setText(newText);
+    props.showAlert("Extra spaces cleared", "success");
+    // var textarea = document.getElementById("exampleFormControlTextarea1");
+    // var newText = textarea.value.replace(/\s+/g, ' ').trim();
+    // textarea.value = newText;
+    // props.showAlert("Extra spaces cleared","success")
 }
+ 
 
 
   return (
