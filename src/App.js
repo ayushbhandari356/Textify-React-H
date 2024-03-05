@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar";
 import TextForm from "./Components/TextForm";
 import Alerts from "./Components/Alerts";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Footer from "./Components/Footer";
 
 // importing react router dom
 
@@ -77,10 +78,11 @@ function App() {
       <Alerts alert={alert} />
       <div className="container">
         <Routes>
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<About />} mode={mode}/>
           <Route path="/" element={<TextForm heading="Enter Your Text Here" mode={mode} showAlert={showAlert} />} />
         </Routes>
       </div>
+      <Footer mode={mode}/>
     </Router>
    
 

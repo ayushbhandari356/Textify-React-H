@@ -23,6 +23,7 @@ function TextForm(props) {
     let newText = document.getElementById("exampleFormControlTextarea1");
     newText.select()
     document.execCommand("copy");
+    document.getSelection().collapseToEnd()
     props.showAlert("Text copied ","success")
     // navigator.clipboard.writeText(text.value)
   };
@@ -57,11 +58,11 @@ function TextForm(props) {
           rows="8"
         ></textarea>
         <br></br>
-        <button className="btn btn-secondary mx-2" onClick={handleUpClick}> Convert To Uppercase</button>
-        <button className="btn btn-secondary mx-2 " onClick={handleLoClick}>Convert To Lowercase</button>
-        <button className="btn btn-secondary mx-2 " onClick={handleClear}>Clear Text</button>
-        <button className="btn btn-secondary mx-2 " onClick={handleCopy}>Copy Text</button>
-        <button className="btn btn-secondary mx-2 " onClick={removeExtraSpaces}>Remove Extra Spaces</button>
+        <button disabled={text.length===0} className="btn btn-secondary mx-2  my-1" onClick={handleClear}>Clear Text</button>
+        <button disabled={text.length===0} className="btn btn-secondary mx-2 my-1" onClick={handleUpClick}> Convert To Uppercase</button>
+        <button disabled={text.length===0} className="btn btn-secondary mx-2  my-1" onClick={handleCopy}>Copy Text</button>
+        <button disabled={text.length===0} className="btn btn-secondary mx-2  my-1" onClick={handleLoClick}>Convert To Lowercase</button>
+        <button disabled={text.length===0} className="btn btn-secondary mx-2  my-1" onClick={removeExtraSpaces}>Remove Extra Spaces</button>
          
       </div>
       <div

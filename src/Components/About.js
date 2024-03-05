@@ -1,51 +1,33 @@
-import React ,{useState} from "react";
+import React, { useState } from "react";
 
-function About() {
-    const [buttonText,setButtonText]=useState("Enable Light Mode")
-    const [myStyle,setMyStyle]=useState({
-        
-        color:"black",
-        backgroundColor:"white",
-    })
+function About(props) {
+  
+  // const [myStyle, setMyStyle] = useState({
+  //   color: "black",
+  //   backgroundColor: "white",
+  // });
 
-    const toggleDarkLight=()=>{
-        if(myStyle.color=="white"){
-            setMyStyle({
-        
-                color:"black",
-                backgroundColor:"white",
-            })
-            setButtonText("Enable Dark Mode")
-        }
-        else{
-            setMyStyle({
-        
-                color:"white",
-                backgroundColor:"#101010",
-            })
-            setButtonText("Enable Light Mode")
-
-        }
-    }
-    
+  let myStyle={
+    color:props.mode==="dark"?"white":"black",
+    backgroundColor:props.mode==="dark"?"black":"white"
+  }
   return (
-    
-    <div className="container my-4" style={myStyle} >
-      <h1 style={{ paddingBottom: "10px" }}>About Us</h1>
+    <div className="container my-4" style={myStyle}>
+      <h1 style={myStyle}>About Us</h1>
 
-      <div className="accordion "  style={myStyle} id="accordionExample "    >
+      <div className="accordion " style={myStyle} id="accordionExample ">
         <div className="accordion-item" style={myStyle}>
           <h2 className="accordion-header  style={myStyle}">
             <button
-             style={myStyle}
-              className="accordion-button  style={myStyle} "
+              style={myStyle}
+              className="accordion-button "  
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseOne"
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Accordion Item #1
+              <strong>Know about our app !</strong>
             </button>
           </h2>
           <div
@@ -54,21 +36,23 @@ function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
-              <strong>This is the first item's accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              <strong>Dear User</strong> , Thank you for using our text
+              conversion tool in your React app! We appreciate your support and
+              hope it's been helpful to you. As a reminder, here are some
+              features you can utilize: Convert text to lowercase Convert text
+              to uppercase Clear text Copy text to clipboard Remove extra spaces
+              We're constantly working to improve our app and add new features,
+              so stay tuned for updates! If you have any feedback or
+              suggestions, feel free to reach out to us. We value your input and
+              strive to make your experience with our app as smooth as possible.
+              Thank you again for choosing our app! Best regards,
             </div>
           </div>
         </div>
         <div className="accordion-item">
           <h2 className="accordion-header">
             <button
-             style={myStyle}
+              style={myStyle}
               className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
@@ -76,7 +60,7 @@ function About() {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Accordion Item #2
+              <strong>Text Conversion Options</strong>
             </button>
           </h2>
           <div
@@ -85,21 +69,22 @@ function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the second item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              Dear User, Thank you for using our text conversion tool in your
+              React app! We appreciate your support and hope it's been helpful
+              to you. As a reminder, here are some features you can utilize:
+              Convert text to lowercase Convert text to uppercase Clear text
+              We're constantly working to improve our app and add new features,
+              so stay tuned for updates! If you have any feedback or
+              suggestions, feel free to reach out to us. We value your input and
+              strive to make your experience with our app as smooth as possible.
+              Thank you again for choosing our app! Best regards,
             </div>
           </div>
         </div>
         <div className="accordion-item">
           <h2 className="accordion-header">
             <button
-             style={myStyle}
+              style={myStyle}
               className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
@@ -107,7 +92,7 @@ function About() {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              Accordion Item #3
+              <strong> Space Management </strong>
             </button>
           </h2>
           <div
@@ -115,25 +100,25 @@ function About() {
             className="accordion-collapse collapse"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body"  style={myStyle}>
-              <strong>This is the third item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+            <div className="accordion-body" style={myStyle}>
+              Dear User, Thank you for using our text conversion tool in your
+              React app! We appreciate your support and hope it's been helpful
+              to you. As a reminder, here are some features you can utilize:
+              Remove extra spaces We're constantly working to improve our app
+              and add new features, so stay tuned for updates! If you have any
+              feedback or suggestions, feel free to reach out to us. We value
+              your input and strive to make your experience with our app as
+              smooth as possible. Thank you again for choosing our app! Best
+              regards,
             </div>
           </div>
         </div>
       </div>
       <div className="container my-3">
-        <button onClick={toggleDarkLight} className="btn btn-outline-secondary mb-3">{buttonText}</button>
+        
       </div>
     </div>
   );
 }
 
 export default About;
-
